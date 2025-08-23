@@ -18,8 +18,10 @@ resultado = f"El usuario no adivino el número: {numSecret}"
 while intentosUsuario < maximoIntentos: #mientras que los intentos del usuario no pasen de 5, vamos a ejecutar el bucle
     userNum = input("Adivina el un número entre 1 y 20: ")
 
-    if userNum.isnumeric() == False:
+    if not userNum.isnumeric():
         continue
+
+    userNum = int(userNum) #convertimos el str(lo que captura la consola) a int 
 
     if userNum <=0 or userNum > 20:
         print("Numero fuera del rango entre 1 y 20")
